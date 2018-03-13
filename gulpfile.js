@@ -60,12 +60,12 @@ gulp.task('indenthtml', function() {
       .pipe(gulp.dest('./'));
 });
 
-gulp.task('indent', ['indentscss', 'indentjs', 'indenthtml']);
-
 
 /**
   * Main tasks
 ***/
+
+gulp.task('indent', ['indentscss', 'indentjs', 'indenthtml']);
 
 gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['scripts']);
