@@ -74,7 +74,7 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['indent', 'scss', 'scripts']);
 
-gulp.task('default', ['watch'], function() {
+gulp.task('default', ['build', 'watch'], function() {
     browserSync.init({
         server: {
             baseDir: "./public"
