@@ -2,6 +2,7 @@
   "name": "starter-pack-static-web2020-hetic",
   "version": "2.0.0",
   "description": "",
+  "sasslintConfig": "./.sasslintrc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
@@ -27,6 +28,7 @@
     "gulp-uglify-es": "^1.0.4",
     "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.5",
+    "sass-lint": "^1.12.1",
     "webpack-stream": "^4.0.3"
   }
 }
