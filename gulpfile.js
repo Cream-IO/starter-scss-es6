@@ -24,6 +24,10 @@ const browserSync = require('browser-sync').create();
 const gulpCopy = require('gulp-copy');
 // Used for sourcemaps
 const sourcemaps = require('gulp-sourcemaps');
+// Used for CSS metrics
+const parker = require('gulp-parker');
+// Used to minify images
+const imagemin = require('gulp-imagemin');
 
 
 /**
@@ -117,8 +121,21 @@ gulp.task('indenthtml', function() {
 gulp.task('copy', function() {
   return gulp
     .src('src/assets/**/*')
+    .pipe(imagemin())
     .pipe(gulpCopy('public/assets'))
     .pipe(gulp.dest('public/assets'));
+});
+
+
+/**
+ * Generated metrics of your final CSS
+ */
+gulp.task('cssmetrics', function() {
+    return gulp.src('src/scss/master.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(parker({
+      file: 'metrics/css_metrics.md',
+      title: 'CSS METRICS REPORT'}));
 });
 
 
