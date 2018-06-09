@@ -22,7 +22,7 @@ rules:
   no-color-keywords: 1
   no-color-literals: 1
   no-combinators: 0
-  no-css-comments: 1
+  no-css-comments: 0
   no-debug: 1
   no-disallowed-properties: 0
   no-duplicate-properties: 1
@@ -41,7 +41,7 @@ rules:
   no-url-domains: 1
   no-url-protocols: 1
   no-vendor-prefixes: 1
-  no-warn: 1
+  no-warn: 0
   property-units: 0
 
   # Nesting

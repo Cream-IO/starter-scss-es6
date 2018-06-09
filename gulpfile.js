@@ -72,64 +72,6 @@ gulp.task('scripts', function() {
 
 
 /**
- * INDENTATION TASKS
- ***/
-
-/**
- * Reindents all SCSS files under src/scss
- * using 2 spaces tabs (standard for CSS)
- ***/
-gulp.task('indentscss', function() {
-  return gulp.src('src/scss/**/*.scss', {
-      base: './'
-    })
-    .pipe(jsbeautify({
-      indent_size: 2
-    }))
-    .pipe(gulp.dest('./'));
-});
-
-/**
- * Reindents all JS files under src/js
- * using 4 spaces tabs (standard for JS)
- ***/
-gulp.task('indentjs', function() {
-  return gulp.src('src/js/**/*.js', {
-      base: './'
-    })
-    .pipe(jsbeautify())
-    .pipe(gulp.dest('./'));
-});
-
-/**
- * Reindents all HTML files under public
- * using 2 spaces tabs (standard for HTML)
- ***/
-gulp.task('indenthtml', function() {
-  var options = {
-    "indent_size": 2,
-  };
-  return gulp.src('public/**/*.html', {
-      base: './'
-    })
-    .pipe(htmlbeautify(options))
-    .pipe(gulp.dest('./'));
-});
-
-/**
- * Copy assets from source to public
- */
-gulp.task('copy', function() {
-  del('public/assets');
-  return gulp
-    .src('src/assets/**/*')
-    .pipe(imagemin())
-    .pipe(gulpCopy('public/assets'))
-    .pipe(gulp.dest('public/assets'));
-});
-
-
-/**
  * Generated metrics of your final CSS
  */
 gulp.task('cssmetrics', function() {
@@ -154,10 +96,6 @@ gulp.task('run', ['build'], function() {
       open: true
     }));
 });
-/**
- * Reindents all JS, SCSS and HTML files
- ***/
-gulp.task('indent', ['indentscss', 'indentjs', 'indenthtml']);
 
 /**
  * Watches all JS & SCSS files and recompiles it when modified
@@ -170,7 +108,7 @@ gulp.task('watch', function() {
 /**
  * Reindents then build SCSS & JS
  ***/
-gulp.task('build', ['indent', 'scss', 'scripts', 'copy']);
+gulp.task('build', ['scss', 'scripts']);
 
 /**
  * Builds SCSS & JS, watches it
