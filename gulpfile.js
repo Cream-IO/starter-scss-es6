@@ -112,15 +112,13 @@ gulp.task('indenthtml', function() {
 });
 
 /**
- * Copy data.json from source to public
+ * Copy assets from source to public
  */
 gulp.task('copy', function() {
   return gulp
-    .src('src/data.json')
-    .pipe(gulpCopy('public/', {
-      prefix: 1
-    }))
-    .pipe(gulp.dest('public'));
+    .src('src/assets/**/*')
+    .pipe(gulpCopy('public/assets'))
+    .pipe(gulp.dest('public/assets'));
 });
 
 
