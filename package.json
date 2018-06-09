@@ -1,21 +1,29 @@
 {
-  "name": "starter_pack_static_WEB2020_hetic",
-  "version": "1.0.0",
+  "name": "starter-pack-static-web2020-hetic",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "Chrystelle (<3) et Quentin",
   "license": "ISC",
-  "dependencies": {
-    "browser-sync": "^2.23.6",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-copy": "^1.1.0",
     "gulp-html-beautify": "^1.0.1",
     "gulp-jsbeautifier": "^2.1.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-webserver": "^0.9.1",
+    "jshint": "^2.9.5",
+    "webpack-stream": "^4.0.3"
   }
 }
