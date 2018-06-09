@@ -1,4 +1,4 @@
-// jshint ignore: start
+/* eslint-disable */
 'use strict';
 
 // Just say we use gulp
@@ -28,7 +28,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const parker = require('gulp-parker');
 // Used to minify images
 const imagemin = require('gulp-imagemin');
-
+// Used to delete folder
+const del = require('del');
 
 /**
  * BUILDING TASKS
@@ -119,6 +120,7 @@ gulp.task('indenthtml', function() {
  * Copy assets from source to public
  */
 gulp.task('copy', function() {
+  del('public/assets');
   return gulp
     .src('src/assets/**/*')
     .pipe(imagemin())
