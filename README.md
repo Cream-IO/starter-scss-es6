@@ -40,14 +40,14 @@ All your SCSS code should be in the different directories under `src/scss` and f
 
 Linting rules are configured in `.sass-lint.yml`. (You should use a plugin handling `sass-lint` in your editor).
 
-The linter is configured to use the [BEM convention](http://getbem.com/naming/).
+The linter is configured to use the [BEM convention](http://getbem.com/naming/) whith hyphened name (meaning a block/element can use hyphens to separate words).  
 The max element depth is one (meaning you can't have an element inside another element).
 
 Example:
 
 ```scss
 // GOOD
-.block {
+.block-with-long-name {
   &__element {
     &--modifier {
     }
@@ -59,7 +59,7 @@ Example:
 }
 
 // WRONG
-.block {
+.blockWithLongName {
   &__element {
     &__subelement {
       &--modifier {
