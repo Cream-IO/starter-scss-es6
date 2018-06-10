@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 
 // Just say we use gulp
@@ -20,6 +19,10 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 // Used for CSS metrics
 const parker = require('gulp-parker');
+// Used for JS linting
+const eslint = require('gulp-eslint');
+// Used for SCSS linting
+const sasslint = require('gulp-sass-lint');
 
 /**
  * BUILDING TASKS
@@ -60,6 +63,26 @@ gulp.task('scripts', function() {
     .pipe(browserSync.stream());
 });
 
+/**
+ * JS LINTING
+ */
+gulp.task('jslint', function() {
+  return gulp.src(['src/js/**/*.js','!node_modules/**'])
+    .pipe(eslint('.eslintrc.js'))
+    .pipe(eslint.format());
+});
+
+/**
+ * SCSS LINTING
+ */
+gulp.task('scsslint', function () {
+  return gulp.src('src/scss/**/*.scss')
+    .pipe(sasslint({
+      configFile: '.sass-lint.yml'
+    }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError())
+});
 
 /**
  * Generated metrics of your final CSS
