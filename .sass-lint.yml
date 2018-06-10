@@ -51,7 +51,9 @@ rules:
   force-pseudo-nesting: 1
 
   # Name Formats
-  class-name-format: 1
+  class-name-format: 
+    - 1
+    - convention: hyphenatedbem
   function-name-format: 1
   id-name-format: 0
   mixin-name-format: 1
@@ -60,7 +62,7 @@ rules:
 
   # Style Guide
   attribute-quotes: 1
-  bem-depth: 0
+  bem-depth: 1
   border-zero: 1
   brace-style: 1
   clean-import-paths: 1
