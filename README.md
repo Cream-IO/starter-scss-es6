@@ -40,6 +40,35 @@ All your SCSS code should be in the different directories under `src/scss` and f
 
 Linting rules are configured in `.sass-lint.yml`. (You should use a plugin handling `sass-lint` in your editor).
 
+The linter is configured to use the [BEM convention](http://getbem.com/naming/).
+The max element depth is one (meaning you can't have an element inside another element).
+
+Example:
+
+```scss
+// GOOD
+.block {
+  &__element {
+    &--modifier {
+    }
+  }
+  &__another-element {
+    &--modifier {
+    }
+  }
+}
+
+// WRONG
+.block {
+  &__element {
+    &__subelement {
+      &--modifier {
+      }
+    }
+  }
+}
+```
+
 ### Scripts (JS)
 
 All your SCSS goes in the `src/js` directory and should be imported using ES6 import in `app.js`.
