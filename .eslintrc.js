@@ -14,5 +14,6 @@ module.exports = {
     semi: ["error", "always"],
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "valid-jsdoc": "warn",
+    yoda: ["warn", "never", { "onlyEquality": true }],
   }
 };
