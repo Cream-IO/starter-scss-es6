@@ -4,10 +4,11 @@
   "description": "",
   "sasslintConfig": "./.sass-lint.yml",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "./node_modules/.bin/gulp"
   },
   "author": "Chrystelle (<3) et Quentin",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
