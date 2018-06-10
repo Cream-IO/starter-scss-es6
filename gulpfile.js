@@ -11,25 +11,15 @@ const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 // Used to minify JS
 const uglify = require('gulp-uglify-es').default;
-// Used to reindent HTML
-const htmlbeautify = require('gulp-html-beautify');
-// Used to reindent SCSS/SASS & JS
-const jsbeautify = require('gulp-jsbeautifier');
 // Used for ES6 tu ES2015 & polyfilling
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
 // Used to auto refresh browser and serve files
 const browserSync = require('browser-sync').create();
-// Used to copy data.json
-const gulpCopy = require('gulp-copy');
 // Used for sourcemaps
 const sourcemaps = require('gulp-sourcemaps');
 // Used for CSS metrics
 const parker = require('gulp-parker');
-// Used to minify images
-const imagemin = require('gulp-imagemin');
-// Used to delete folder
-const del = require('del');
 
 /**
  * BUILDING TASKS
@@ -90,10 +80,11 @@ gulp.task('cssmetrics', function() {
 /**
  * Runs simple webserver in public/
  */
-gulp.task('run', ['build'], function() {
+gulp.task('serve', ['build'], function() {
   gulp.src('public')
     .pipe(webserver({
-      open: true
+      open: false,
+      port: 12000
     }));
 });
 

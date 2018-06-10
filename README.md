@@ -1,46 +1,62 @@
-# How to use the starter_pack_static_WEB2020_hetic
+# ES6 Javascript Starter
 
-## Installation
+- [ES6 Javascript Starter](#es6-javascript-starter)
+  - [Dependencies](#dependencies)
+  - [How to start a project](#how-to-start-a-project)
+  - [Usage](#usage)
+    - [Style (SCSS)](#style-scss)
+    - [Scripts (JS)](#scripts-js)
+    - [Gulp Tasks](#gulp-tasks)
 
-1. Clone the project on your computer
+## Dependencies
 
-2. Remove .git directory
+To use this starter, you must install gulp as a global NPM package.  
 
-3. Git init
+I recommend using Yarn as it has a better dependency lock handling.
 
-4. Git remote add origin yourRepositoryUrl
+```bash
+npm install -g gulp
+# OR
+yarn global add gulp
+```
 
-5. Open terminal
+## How to start a project
 
-6. npm install
-
-7. Start coding your project !
+1. Clone this repository. (`git clone git@github.com:Cream-IO/starter_pack_static_WEB2020_hetic.git my-project`)
+2. Move into the created directory. (`cd my-project`)
+3. Remove the .git directory. (`rm -rf .git`)
+4. Initialize a new git repository. (`git init`)
+5. Add your own git remote. (`git remote add {YOUR-REPOSITORY URL}`)
+6. Install the dedency packages. (`yarn {OR} npm install`)
 
 ## Usage
 
-All your JS and SCSS code goes into src/
+### Style (SCSS)
 
-You should include all scss files in master.scss
+All your SCSS code should be in the different directories under `src/scss` and files must be imported in `master.scss`.  
 
-All files in src/js are used by default.
+Linting rules are configured in `.sass-lint.yml`. (You should use a plugin handling `sass-lint` in your editor).
 
-Your HTML goes in the public directory.
+### Scripts (JS)
 
-NEVER CODE JS OR CSS IN THE PUBLIC DIRECTORY.
+All your SCSS goes in the `src/js` directory and should be imported using ES6 import in `app.js`.
 
-NEVER REMOVE THE GULPFILE.JS
+The starter is configured to handle ES6/ES2015 code and use webpack to polyfill ES6 features in the final minified JS file.
 
+Linting rules are configured in `.eslintrc.js`. (You should use a plugin handling `ESLint` in your editor).
 
-The public directory is the final directory of your project.
+### Gulp Tasks
 
-## Commands
+You can start a gulp task by typing in your terminal `gulp {taskname}`.
 
-In your terminal :
+Following tasks are available in the `gulpfile.js` :
 
-gulp : Opens a new browser window live reload, watches changes in your html, scss and JS files and builds minified files.
+- scss (Builds `src/scss/master.scss` to `public/css/master.min.css`)
+- scripts (Builds `src/js/app.js` to `public/js/app.min.js`)
+- build (Builds everything, equivalent to scss & scripts tasks together)
+- cssmetrics (Generates metrics about css in the `metrics` directory)
+- serve (Builds and starts a web server on localhost:12000)
+- watch (Watches SCSS, HTML & JS and rebuilds on modification)
+- default (Builds everything, watches it, starts a web server on port 3000, opens the browser and refreshes at every file modification)
 
-gulp indent : Indents automatically all your html, scss and JS files.
-
-gulp watch : Watches changes in your html, scss and JS files and builds minified files.
-
-gulp build : Builds minified files.
+The default gulp task can also be starter with `yarn start`.
