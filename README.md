@@ -71,7 +71,7 @@ Example:
 
 ### Scripts (JS)
 
-All your SCSS goes in the `src/js` directory and should be imported using ES6 import in `app.js`.
+All your Javascript scripts goes in the `src/js` directory or subdirectories and should be imported using ES6 import in `app.js`.
 
 The starter is configured to handle ES6/ES2015 code and use webpack to polyfill ES6 features in the final minified JS file.
 
