@@ -59,6 +59,8 @@ Following tasks are available in the `gulpfile.js` :
 - build (Builds everything, equivalent to scss & scripts tasks together)
 - cssmetrics (Generates metrics about css in the `metrics` directory, you must create the directory `mkdir metrics`)
 - serve (Builds and starts a web server on localhost:12000)
+- jslint (Check for linting errors in `src/js/**/*.js`)
+- scsslint (Check for linting errors in `src/scss/**/*.scss`)
 - watch (Watches SCSS, HTML & JS and rebuilds on modification)
 - default (Builds everything, watches it, starts a web server on port 3000, opens the browser and refreshes at every file modification)
 
