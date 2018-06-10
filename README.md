@@ -3,10 +3,12 @@
 - [ES6 Javascript Starter](#es6-javascript-starter)
   - [Dependencies](#dependencies)
   - [How to start a project](#how-to-start-a-project)
-  - [Usage](#usage)
+  - [Structure](#structure)
     - [Style (SCSS)](#style-scss)
     - [Scripts (JS)](#scripts-js)
     - [Gulp Tasks](#gulp-tasks)
+    - [Assets](#assets)
+    - [Public directory](#public-directory)
 
 ## Dependencies
 
@@ -22,14 +24,15 @@ yarn global add gulp
 
 ## How to start a project
 
-1. Clone this repository. (`git clone git@github.com:Cream-IO/starter_pack_static_WEB2020_hetic.git my-project`)
-2. Move into the created directory. (`cd my-project`)
+1. Clone this repository. (`git clone git@github.com:Cream-IO/starter_pack_static_WEB2020_hetic.git {YOUR-PROJECT-NAME}`)
+2. Move into the created directory. (`cd {YOUR-PROJECT-NAME}`)
 3. Remove the .git directory. (`rm -rf .git`)
-4. Initialize a new git repository. (`git init`)
-5. Add your own git remote. (`git remote add {YOUR-REPOSITORY URL}`)
-6. Install the dedency packages. (`yarn {OR} npm install`)
+4. Remove the starter README file. (`rm -rf README.md`)
+5. Initialize a new git repository. (`git init`)
+6. Add your own git remote. (`git remote add {YOUR-REPOSITORY URL}`)
+7. Install the dedency packages. (`yarn {OR} npm install`)
 
-## Usage
+## Structure
 
 ### Style (SCSS)
 
@@ -60,3 +63,12 @@ Following tasks are available in the `gulpfile.js` :
 - default (Builds everything, watches it, starts a web server on port 3000, opens the browser and refreshes at every file modification)
 
 The default gulp task can also be starter with `yarn start`.
+
+### Assets
+
+You must place your assets (images, videos, sounds... etc) in the `public` directory.
+
+### Public directory
+
+After running the `gulp build` task, the public directory contains the final version of your application.  
+You can upload the content of this folder where you want to.
