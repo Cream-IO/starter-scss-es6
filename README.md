@@ -12,9 +12,9 @@
 
 ## Dependencies
 
-To use this starter, you must install gulp as a global NPM package.  
+To use this starter, you **must** install gulp as a **global** NPM package.  
 
-I recommend using Yarn as it has a better dependency lock handling.
+**I recommend using Yarn as it has a better dependency lock handling.**
 
 ```bash
 npm install -g gulp
@@ -36,14 +36,14 @@ yarn global add gulp
 
 ### Style (SCSS)
 
-All your SCSS code should be in the different directories under `src/scss` and files must be imported in `master.scss`.  
+All your SCSS code **must** be in the different directories under `src/scss` and files must be imported in `master.scss`.  
 
 Linting rules are configured in `.sass-lint.yml`. (You should use a plugin handling `sass-lint` in your editor).
 
 The linter is configured to use the [BEM convention](http://getbem.com/naming/) whith hyphened name (meaning a block/element can use hyphens to separate words).  
-The max element depth is one (meaning you can't have an element inside another element).
+The max element depth is **one** (meaning you can't have an element inside another element).
 
-Example:
+**Example:**
 
 ```scss
 // GOOD
@@ -71,9 +71,9 @@ Example:
 
 ### Scripts (JS)
 
-All your Javascript scripts goes in the `src/js` directory or subdirectories and should be imported using ES6 import in `app.js`.
+All your Javascript scripts **must** be in the `src/js` directory or subdirectories and should be imported using ES6 import or ES5 require in `app.js`.
 
-The starter is configured to handle ES6/ES2015 code and use webpack to polyfill ES6 features in the final minified JS file.
+The starter is configured to handle **ES6/ES2015** code and use webpack to polyfill ES6 features in the final minified JS file.
 
 Linting rules are configured in `.eslintrc.js`. (You should use a plugin handling `ESLint` in your editor).
 
@@ -93,13 +93,13 @@ Following tasks are available in the `gulpfile.js` :
 - watch (Watches SCSS, HTML & JS and rebuilds on modification)
 - default (Builds everything, watches it, starts a web server on port 3000, opens the browser and refreshes at every file modification)
 
-The default gulp task can also be starter with `yarn start`.
+The default gulp task can also be starter with `yarn start` or simply with `gulp` without task specification.
 
 ### Assets
 
-You must place your assets (images, videos, sounds... etc) in the `public` directory.
+You **must** place your assets (images, videos, sounds... etc) in the `public` directory or any subdirectory.
 
 ### Public directory
 
-After running the `gulp build` task, the public directory contains the final version of your application.  
-You can upload the content of this folder where you want to.
+After running the `gulp build` task, the `public` directory contains the final version of your application.  
+**You can upload the content of this folder where you want to.**
